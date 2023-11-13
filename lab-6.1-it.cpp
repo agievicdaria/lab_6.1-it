@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 using namespace std;
 
@@ -14,7 +15,8 @@ void calculateSumAndChangeToZero(int a[], int size, int &count, int &sum) {
     count = 0;
     sum = 0;
     for (int i = 0; i < size; ++i) {
-        if (a[i] > 0 && i % 5 != 0) {
+        if (a[i] > 0 && !(i % 5 == 0)) 
+        {
             count++;
             sum += a[i];
 
@@ -25,7 +27,7 @@ void calculateSumAndChangeToZero(int a[], int size, int &count, int &sum) {
 
 void printArray(int a[], int size) {
     for (int i = 0; i < size; ++i) {
-        cout << a[i] << " ";
+        cout << setw(6) << a[i] << " ";
     }
     cout << endl;
 }
